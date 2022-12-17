@@ -1,11 +1,17 @@
 #pragma once
-class Player
+#include "MapObject.h"
+#include <string>
+class Player : public MapObject
 {
+	
 	public:
-	int x, y;
-	Player() {
-		this->x = 1;
-		this->y = 2;
+		std::string name = "";
+	Player(int x, int y, std::string name) : MapObject(x, y) {
+		this->name = name;
+	}
+
+	std::string toString() {
+		return name;
 	}
 };
 
